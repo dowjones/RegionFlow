@@ -1,0 +1,29 @@
+{
+  "name": "regionflow",
+  "version": "0.1.1",
+  "description": "Flows content into a block-level element with fixed width and height, returning the overflow content.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.dowjones.net:newsroomdevelopment/RegionFlow.git"
+  },
+  "keywords": [
+    "region",
+    "flow",
+    "javascript"
+  ],
+  "author": {
+    "name": "Adrian Lafond",
+    "email": "adrian.lafond@dowjones.com",
+    "dept": "Dow Jones Newsroom Development"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.8.1",
+    "gulp-header": "~1.0.2",
+    "gulp-clean": "~0.3.1",
+    "gulp-jshint": "~1.8.4",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~0.3.1",
+    "jshint-stylish": "~0.4.0"
+  }
+}

@@ -1,0 +1,15 @@
+# osx noise
+.DS_Store
+profile
+
+# svn & cvs
+.svn
+CVS
+
+# grunt
+node_modules
+
+# other
+*.sass-cache*
+
+.env*
