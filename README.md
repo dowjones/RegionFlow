@@ -35,6 +35,11 @@ var flowC = regionflow({
 
 Above, RegionFlow captures the content that overflows #regionA so it can be flowed into #regionB. If the content overflows #regionB's dimensions, RegionFlow appends "»" to #regionB's content. The overflow from #regionB is then flowed into #regionC. Because both `ellipse` and `endsign` are defined, if the value of `flowB` overflows #regionC's dimensions then #regionC's content will end with a "»", but if it does not overflow #regionC's dimensions then the content will end with a "◼".
 
+### Live Examples:
+* [basic example](http://dowjones.github.io/RegionFlow/demo/basic.html)
+* [columns example](http://dowjones.github.io/RegionFlow/demo/columns.html)
+* [subtractive example](http://dowjones.github.io/RegionFlow/demo/2-col-subtractive.html)
+
 ### Tips:
 - To prevent an ellipse from dropping onto a new line as an orphan, prefix the ellipse string with a `&nbsp;`.
 - RegionFlow works by duplicating and splitting XML nodes across regions, so if a paragraph overflows from one region to a second through multiple RegionFlow calls (such as when the overflow `flowA` from the first call above is used as the content for the next call), the paragraph will be split in two with the second part becoming the first paragraph of the second region. This can cause odd styling issues in some cases, such as if the paragraph is styled with a non-zero `text-indent` value which will cause both paragraph parts to be indented when only the first should be. To prevent this, disable indentation on first-child paragraphs of non-first regions:
