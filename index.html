@@ -65,10 +65,17 @@
             <li><a href="demo/2-col-subtractive.html">subtractive regions</a></li>
         </div>
         <div class="box"></div>
-
-        <!-- <img src="http://placehold.it/450x300"> -->
-
-
+        <p>
+          While there are many other column-reflowing libraries, this one is unique for a few different notable features:
+        </p>
+        <ol>
+          <li>DOM node splitting: content with tags will be split across different regions.</li>
+          <li>Unlike CSS Regions, containers with text flowed into them actually have the text contained within them in the DOM.</li>
+        </ol>
+        <p>
+          This library's reflowing logic can be used on flexible-width containers (as illustrated in the source of this page), this library's primary purpose is in fixed-width,
+          fixed-height layout scenarios, e.g. a tablet screen.
+        </p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/dowjones">dowjones</a></p>
@@ -76,9 +83,11 @@
       </footer>
     </div>
     <script>
+
+      var cols = document.querySelectorAll('.box');
+
       var reflow = function() {
         var overflow = null;
-        var cols = document.querySelectorAll('.box');
         for (var i = 0, len = cols.length; i < len; i++) {
           overflow = regionflow({
             region: cols[i],
