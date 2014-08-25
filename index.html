@@ -12,6 +12,26 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <style>
+
+      @media all and (min-width:600px) {
+        .box {
+          width:48%;
+          height:170px;
+          float:left;
+          margin:0;
+          padding:0;
+        }
+        .box:first-of-type {
+          margin-right:2%;
+        }
+
+        section {
+          min-height:500px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -32,7 +52,21 @@
         <h3>
 <a name="regionflow" class="anchor" href="#regionflow"><span class="octicon octicon-link"></span></a>RegionFlow</h3>
         <p>This library is used to help manage content flowing from one container to another.</p>
-        <img src="http://placehold.it/450x300">
+        <div class="box">
+          <p>
+            RegionFlow flows content into a region with fixed width and height. It can append an ellipse to content that
+            is flowed into the region if the full content overflows the region's dimensions or an endsign if the content
+            does fit within the region's dimensions. Any content that overflows the region is returned, allowing content
+            to span across several region elements.
+          </p>
+          <ul>
+            <li><a href="demo/basic.html">basic reflow example</a></li>
+            <li><a href="demo/columns.html">columns example</a></li>
+            <li><a href="demo/2-col-subtractive.html">subtractive regions</a></li>
+        </div>
+        <div class="box"></div>
+
+        <!-- <img src="http://placehold.it/450x300"> -->
 
 
       </section>
@@ -41,17 +75,41 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-39164806-4");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script>
+      var reflow = function() {
+        var overflow = null;
+        var cols = document.querySelectorAll('.box');
+        for (var i = 0, len = cols.length; i < len; i++) {
+          overflow = regionflow({
+            region: cols[i],
+            content: overflow,
+            ellipse: (i === len - 1) ? '&nbsp;»' : null
+          })
+        }
+      };
+
+      var windowWidth = window.innerWidth;
+      setInterval(function(){
+        var currentWidth = window.innerWidth;
+        if(currentWidth !== windowWidth) {
+          windowWidth = window.innerWidth;
+          reflow();
+        }
+      }, 1000);
+
+      reflow();
+
+    </script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-39164806-4");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
 
   </body>
 </html>
