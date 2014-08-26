@@ -47,3 +47,5 @@ Above, RegionFlow captures the content that overflows #regionA so it can be flow
 .region + .region p:first-child { text-indent: 0; }
 ```
 - RegionFlow can be used to support `column-count` in IE9. Just draw the columns as `div` elements with fixed width and height and flow the content from `div` to `div`.
+
+This project was developed by Adrian Lafond, with input from Erin Sparling, and is maintained by Dow Jones.
