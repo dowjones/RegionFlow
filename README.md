@@ -39,6 +39,7 @@ Above, RegionFlow captures the content that overflows #regionA so it can be flow
 * [basic example](http://dowjones.github.io/RegionFlow/demo/basic.html)
 * [columns example](http://dowjones.github.io/RegionFlow/demo/columns.html)
 * [subtractive example](http://dowjones.github.io/RegionFlow/demo/2-col-subtractive.html)
+* [responsive example](http://dowjones.github.io/RegionFlow/demo/responsive.html)
 
 ### Tips:
 - To prevent an ellipse from dropping onto a new line as an orphan, prefix the ellipse string with a `&nbsp;`.
